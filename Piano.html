@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Piano en Ligne</title>
+  <link rel="stylesheet" href="Piano.css"> 
+</head>
+<body>
+
+<canvas id="pianoCanvas">Votre navigateur ne supporte pas canvas</canvas>
+
+<button onclick="buttonOctave(1)" id="un">1</button>
+<button onclick="buttonOctave(2)" id="deux">2</button>
+
+<input id="check" type="checkbox" onclick="buttonTempo()">
+
+<button onclick="startChrono()" id="start">Start</button>
+<button onclick="stopChrono()" id="stop">Stop</button>
+<button onclick="play()" id="play">Play</button>
+<button onclick="aide()" id="aide">Aide ?</button>
+
+<input type="range" min="1" max="100" value="100" class="slider" id="volumeRange">
+
+<img src="Image/piano.png" class="iconeInstru" id="iconePiano" onclick="changeInstru(1)">
+<img src="Image/batterie.png" class="iconeInstru" id="iconeBatterie" title="Indisponible, manque bibliothèque de sons.">
+<img src="Image/guitare.png" class="iconeInstru" id="iconeGuitare" title="Indisponible, manque bibliothèque de sons.">
+
+<span onclick="fermeAide()" class="popuptext" id="popupOctave">Ces boutons changent l’octave. Le 2e sera plus aigu.</span>
+<span onclick="fermeAide()" class="popuptext" id="popupInstrument">Ces boutons changent l’instrument.</span>
+<span onclick="fermeAide()" class="popuptext" id="popupVolume">Ce curseur modifie le volume du son.</span>
+<span onclick="fermeAide()" class="popuptext" id="popupAutoplay">Les boutons "Start", "Stop" et "Play"
+  <br> permettent d'enregister ce qu'on joue :
+  <br> - Start : Jouez votre morceau.
+  <br> - Stop : Stoppez votre morceau.
+  <br> - Play : Écoutez votre morceau.
+</span>
+<span onclick="fermeAide()" class="popuptext" id="popupBpm">Le rectangle noir permet d'avoir un metronome.
+  <br> Pour le mettre en place :
+  <br> - Mettez une valeur comprise entre 1 et 999.
+  <br> - Appuyez sur entrée.
+  <br> - Cochez la case pour que le metronome s'enclenche.
+  <br> Vous pouvez l’arrêter en décochant la case à tout moment.
+</span>
+
+<h1>Piano</h1>
+
+<p class="copy">Créé par : Antoine & Élias © 2018</p>
+
+<script src="Piano.js"></script>
+</body>
+</html>
